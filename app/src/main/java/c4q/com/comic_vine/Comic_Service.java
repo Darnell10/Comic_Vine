@@ -16,5 +16,5 @@ public interface Comic_Service {
     //String api_key ="fe4712fe36a7a1ddde3025bdba123657124dcb09";
 
     @GET("/api/search/?api_key=fe4712fe36a7a1ddde3025bdba123657124dcb09&format=json")
-    Call<Comic_Model> getInfo(@Query("query") String query);
+    Call<Comic_Model> getComic(@Query("query") String query);
 }

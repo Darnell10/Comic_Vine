@@ -28,7 +28,7 @@ public class Comic_Retrofit implements Callback<Comic_Model> {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
         comic_service = retrofit.create(Comic_Service.class);
-        Call<Comic_Model> call = comic_service.getInfo("batman");
+        Call<Comic_Model> call = comic_service.getComic("batman");
         call.enqueue(this);
 
     }
@@ -37,7 +37,8 @@ public class Comic_Retrofit implements Callback<Comic_Model> {
 
     @Override
     public void onResponse(Call<Comic_Model> call, Response<Comic_Model> response) {
-        if (response.body().getInfo()==null){
+        if (response.body() ==null){
+            Log.d("onResponse: ", response.body().toString());
         } else {
 
         }
@@ -46,11 +47,11 @@ public class Comic_Retrofit implements Callback<Comic_Model> {
 
     @Override
     public void onFailure(Call<Comic_Model> call, Throwable t) {
-        Log.d(TAG, "Wheres My Drink?" + toString());
+        Log.d(TAG, "What universe is this?" + toString());
         t.printStackTrace();
     }
 
 
 
 }
-}
+
