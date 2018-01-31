@@ -6,10 +6,9 @@ import java.util.List;
  * Created by D on 1/27/18.
  */
 
-public abstract class Comic_Model {
+public class Comic_Model {
 
 
-    private String version;
     private List<Results> results;
     private int status_code;
     private int number_of_total_results;
@@ -18,9 +17,6 @@ public abstract class Comic_Model {
     private int limit;
     private String error;
 
-    public String getVersion() {
-        return version;
-    }
 
     public List<Results> getResults() {
         return results;

@@ -15,6 +15,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 
+import c4q.com.comic_vine.fragment.SearchResultFragment;
+
 public class SearchActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -29,10 +31,21 @@ public class SearchActivity extends AppCompatActivity
 
         searchInput = findViewById(R.id.search_input);
         searchButton = findViewById(R.id.search_button);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SearchResultFragment resultFragment = new SearchResultFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("query",searchInput.getText().toString());
+                resultFragment.setArguments(bundle);
+                getSupportFragmentManager().beginTransaction().replace(R.id.search_result_frag,resultFragment).commit();
 
-
+            }
+        });
 
     }
+
+
 
     public void setDrawer(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
