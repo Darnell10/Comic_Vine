@@ -4,6 +4,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,12 +49,18 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ComicViewHol
 
     public class ComicViewHolder extends RecyclerView.ViewHolder{
 
+        private TextView name;
+        private ImageView image;
+
         public ComicViewHolder(View itemView) {
             super(itemView);
+            name = itemView.findViewById(R.id.name);
+            image = itemView.findViewById(R.id.image);
         }
 
         public void onBind(Comic_Model.Results results){
-
+            name.setText(results.getName());
+            Picasso.with(itemView.getContext()).load(results.getImage().getIcon_url()).into(image);
 
         }
     }
