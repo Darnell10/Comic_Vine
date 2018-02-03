@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/detail_image"
-            app:layout_constraintLeft_toRightOf="@+id/detail_publisher"/>
+
 
 
         <ImageView
@@ -32,12 +32,14 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/detail_image"/>
 
+
         <TextView
             android:id="@+id/detail_publisher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toRightOf="@+id/publisher_field"
             app:layout_constraintTop_toBottomOf="@+id/detail_image"/>
+
 
 
         <TextView
