@@ -17,6 +17,9 @@ public class Comic_Model {
     private int limit;
     private String error;
 
+    public Comic_Model(String comic_image, String comic_name, String publisher_name, String resource_type, String detail) {
+    }
+
 
     public List<Results> getResults() {
         return results;
@@ -217,6 +220,8 @@ public class Comic_Model {
             return icon_url;
         }
     }
+
+
 
     public static class First_episode {
         private String episode_number;
