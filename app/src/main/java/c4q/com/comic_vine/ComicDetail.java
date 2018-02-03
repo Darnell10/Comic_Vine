@@ -1,5 +1,6 @@
 package c4q.com.comic_vine;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,8 +14,11 @@ import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.squareup.picasso.Picasso;
 
 import c4q.com.comic_vine.fragment.DetailDescFrag;
@@ -31,42 +35,32 @@ public class ComicDetail extends AppCompatActivity {
     private PagerAdapter pagerAdapter;
     private Bundle bundle;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.comic_detail);
         setReferences();
         bundle = getIntent().getExtras();
-
+        getSupportActionBar().setTitle(bundle.getString("name"));
     }
 
     public void setReferences(){
+
         viewPager = findViewById(R.id.detail_view_pager);
         pagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
+        FloatingActionButton addToFave = findViewById(R.id.add_to_fave_button);
+        addToFave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getBaseContext(),"Added to My Comics!",Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
+
 
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.details_option_menu, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.add_to_favorites:
-                // add to database
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-
-
 
     @Override
     public void onBackPressed() {

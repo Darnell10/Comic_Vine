@@ -56,11 +56,11 @@ public class ComicDatabaseHelper extends SQLiteOpenHelper {
     /** to be added to comic activity*/
 
     // place this in the global field..
-    private SQliteDatabase db;
+    private SQLiteDatabase db;
 
     // get instance of database place in activity
-    ComicDatabaseHelper comicHelper = ComicDatabaseHelper.getComic_instance(this);
-    db = comicHelper.getWritableDatabase();
+    //ComicDatabaseHelper comicHelper = ComicDatabaseHelper.getComic_instance(this);
+    //db = comicHelper.getWritableDatabase();
 
     private void addComic(ComicDetail comicDetail){
         cupboard().withDatabase(db).put(comicDetail);
@@ -78,7 +78,7 @@ public class ComicDatabaseHelper extends SQLiteOpenHelper {
             }
             itr.close();
         } catch (Exception e){
-            Log.e("create tage in global feild",e);
+            //Log.e("create tage in global feild",e);
         }
         return comic_models;
     }

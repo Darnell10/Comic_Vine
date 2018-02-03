@@ -22,12 +22,12 @@ public class ComicSQL extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(
+        /*sqLiteDatabase.execSQL(
                 "CREATE TABLE" + TABLE_NAME+
                         "(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         //Add detail later
                         "comic_name TEXT, publisher_name TEXT, etc_Stuff TEXT);"
-        );
+        );*/
     }
 
     @Override
@@ -41,7 +41,7 @@ public class ComicSQL extends SQLiteOpenHelper {
     }
 
     public  void addComix(Comic_Model comic_model){
-        Cursor cursor = getReadableDatabase().rawQuery("SELECT * FROM" + "comic_model.getmethod()");
+        //Cursor cursor = getReadableDatabase().rawQuery("SELECT * FROM" + "comic_model.getmethod()");
 
     }
 

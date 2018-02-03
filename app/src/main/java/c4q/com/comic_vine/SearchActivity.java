@@ -30,6 +30,8 @@ public class SearchActivity extends AppCompatActivity
         setContentView(R.layout.activity_search);
         setDrawer();
 
+        getSupportActionBar().setTitle("ALL COMICS UNIVERSE");
+
         searchInput = findViewById(R.id.search_input);
         searchButton = findViewById(R.id.search_button);
         searchButton.setOnClickListener(new View.OnClickListener() {
