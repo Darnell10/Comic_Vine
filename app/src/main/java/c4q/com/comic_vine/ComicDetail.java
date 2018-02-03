@@ -5,6 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+import com.squareup.picasso.Picasso;
+
+
 /**
  * Created by Shant on 1/30/2018.
  */
@@ -33,5 +37,27 @@ public class ComicDetail extends AppCompatActivity {
         desc = findViewById(R.id.detail_desc);
         resType = findViewById(R.id.resource_type);
         pub = findViewById(R.id.detail_publisher);
+
+        setViews();
+
     }
+
+    public void setViews(){
+        Bundle bundle = getIntent().getExtras();
+        String name = bundle.getString("name");
+        String pub = bundle.getString("pub");
+        String desc = bundle.getString("desc");
+        String img = bundle.getString("img");
+        String res = bundle.getString("res");
+
+        Picasso.with(getApplicationContext()).load(img).into(image);
+        this.name.setText(name);
+        this.resType.setText(res);
+        this.pub.setText(pub);
+        this.desc.setText(desc);
+
+    }
+
+
+>>>>>>> 77a7324e0ec31606f741352dee55fbd7a8f90ac9
 }

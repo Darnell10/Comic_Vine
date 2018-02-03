@@ -15,35 +15,69 @@
             android:id="@+id/publisher_field"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             app:layout_constraintRight_toLeftOf="@+id/detail_publisher"
             app:layout_constraintLeft_toRightOf="@+id/detail_image"/>
+=======
+            app:layout_constraintTop_toBottomOf="@+id/detail_image"
+            app:layout_constraintLeft_toRightOf="@+id/detail_publisher"/>
+>>>>>>> 77a7324e0ec31606f741352dee55fbd7a8f90ac9
 
 
         <ImageView
             android:id="@+id/detail_image"
+<<<<<<< HEAD
             android:layout_width="150dp"
             android:layout_height="200dp"
+=======
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+>>>>>>> 77a7324e0ec31606f741352dee55fbd7a8f90ac9
             app:layout_constraintRight_toLeftOf="@+id/publisher_field"/>
 
         <TextView
             android:id="@+id/detail_name"
             android:layout_width="wrap_content"
+<<<<<<< HEAD
             android:layout_height="wrap_content" />
+=======
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/detail_image"/>
+>>>>>>> 77a7324e0ec31606f741352dee55fbd7a8f90ac9
 
         <TextView
             android:id="@+id/detail_publisher"
             android:layout_width="wrap_content"
+<<<<<<< HEAD
             android:layout_height="wrap_content" />
+=======
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/publisher_field"
+            app:layout_constraintTop_toBottomOf="@+id/detail_image"/>
+
+>>>>>>> 77a7324e0ec31606f741352dee55fbd7a8f90ac9
 
         <TextView
             android:id="@+id/resource_type"
             android:layout_width="wrap_content"
+<<<<<<< HEAD
             android:layout_height="wrap_content" />
+=======
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@+id/detail_image"/>
+>>>>>>> 77a7324e0ec31606f741352dee55fbd7a8f90ac9
 
         <TextView
             android:id="@+id/detail_desc"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="wrap_content" />
+=======
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/publisher_field"/>
+>>>>>>> 77a7324e0ec31606f741352dee55fbd7a8f90ac9
 
 
     </android.support.constraint.ConstraintLayout>
