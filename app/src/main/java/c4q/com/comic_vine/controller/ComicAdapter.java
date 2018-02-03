@@ -1,5 +1,7 @@
 package c4q.com.comic_vine.controller;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import c4q.com.comic_vine.ComicDetail;
 import c4q.com.comic_vine.Comic_Model;
 import c4q.com.comic_vine.R;
 
@@ -61,6 +64,21 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ComicViewHol
         public void onBind(Comic_Model.Results results){
             name.setText(results.getName());
             Picasso.with(itemView.getContext()).load(results.getImage().getIcon_url()).into(image);
+            final Comic_Model.Results res = results;
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent goToDetail = new Intent(itemView.getContext(), ComicDetail.class);
+                    goToDetail.putExtra("name",res.getName());
+                    goToDetail.putExtra("res",res.getResource_type());
+                    goToDetail.putExtra("desc",res.getDescription());
+                    goToDetail.putExtra("pub",res.getPublisher().getName());
+                    goToDetail.putExtra("img",res.getImage().getScreen_url());
+                    itemView.getContext().startActivity(goToDetail);
+                }
+            });
+
 
         }
     }
