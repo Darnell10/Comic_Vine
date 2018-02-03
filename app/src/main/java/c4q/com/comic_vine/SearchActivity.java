@@ -3,6 +3,7 @@ package c4q.com.comic_vine;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.KeyEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -29,20 +30,37 @@ public class SearchActivity extends AppCompatActivity
         setContentView(R.layout.activity_search);
         setDrawer();
 
+        getSupportActionBar().setTitle("ALL COMICS UNIVERSE");
+
         searchInput = findViewById(R.id.search_input);
         searchButton = findViewById(R.id.search_button);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SearchResultFragment resultFragment = new SearchResultFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("query",searchInput.getText().toString());
-                resultFragment.setArguments(bundle);
-                getSupportFragmentManager().beginTransaction().replace(R.id.search_result_frag,resultFragment).commit();
+                getSearchResultFragment();
 
             }
         });
+        searchInput.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if(i == KeyEvent.KEYCODE_ENTER){
+                    getSearchResultFragment();
+                    return true;
+                }
 
+                return false;
+            }
+        });
+
+    }
+
+    public void getSearchResultFragment(){
+        SearchResultFragment resultFragment = new SearchResultFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("query",searchInput.getText().toString());
+        resultFragment.setArguments(bundle);
+        getSupportFragmentManager().beginTransaction().replace(R.id.search_result_frag,resultFragment).commit();
     }
 
 

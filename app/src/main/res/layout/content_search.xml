@@ -8,9 +8,11 @@
     android:gravity="center"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="c4q.com.comic_vine.SearchActivity"
-    tools:showIn="@layout/app_bar_search">
+    tools:showIn="@layout/app_bar_search"
+    android:background="@color/black">
 
     <EditText
+        android:textColor="@color/white"
         android:id="@+id/search_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +23,7 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@mipmap/ic_pow"
+        android:textColor="@color/white"
         android:text="Search" />
 
     <FrameLayout
