@@ -54,16 +54,19 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ComicViewHol
 
         private TextView name;
         private ImageView image;
+        private TextView res;
 
         public ComicViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
             image = itemView.findViewById(R.id.image);
+            res = itemView.findViewById(R.id.res);
         }
 
         public void onBind(Comic_Model.Results results){
             name.setText(results.getName());
-            Picasso.with(itemView.getContext()).load(results.getImage().getIcon_url()).into(image);
+            res.setText(results.getResource_type());
+            Picasso.with(itemView.getContext()).load(results.getImage().getSmall_url()).into(image);
             final Comic_Model.Results res = results;
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +77,7 @@ public class ComicAdapter extends RecyclerView.Adapter<ComicAdapter.ComicViewHol
                     goToDetail.putExtra("res",res.getResource_type());
                     goToDetail.putExtra("desc",res.getDescription());
                     goToDetail.putExtra("pub",res.getPublisher().getName());
-                    goToDetail.putExtra("img",res.getImage().getScreen_url());
+                    goToDetail.putExtra("img",res.getImage().getScreen_large_url() );
                     itemView.getContext().startActivity(goToDetail);
                 }
             });
