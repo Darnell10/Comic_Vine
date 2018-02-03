@@ -22,7 +22,6 @@ public class DetailImageFrag extends Fragment {
 
     View rootView;
     ImageView image;
-    TextView textView;
 
     public DetailImageFrag() {
         // Required empty public constructor
@@ -35,15 +34,10 @@ public class DetailImageFrag extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_detail_image, container, false);
         image = rootView.findViewById(R.id.detail_image_frag);
-        textView = rootView.findViewById(R.id.detail_name_frag);
         Bundle bundle = getArguments();
-        String name = bundle.getString("name");
         String img = bundle.getString("img");
         Picasso.with(getContext()).load(img).into(image);
-        textView.setText(name);
 
-
-        // Inflate the layout for this fragment
         return rootView;
     }
 
