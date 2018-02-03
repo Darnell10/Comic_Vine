@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-
 import com.squareup.picasso.Picasso;
 
 
@@ -37,7 +35,6 @@ public class ComicDetail extends AppCompatActivity {
         desc = findViewById(R.id.detail_desc);
         resType = findViewById(R.id.resource_type);
         pub = findViewById(R.id.detail_publisher);
-
         setViews();
 
     }
@@ -59,5 +56,4 @@ public class ComicDetail extends AppCompatActivity {
     }
 
 
->>>>>>> 77a7324e0ec31606f741352dee55fbd7a8f90ac9
 }
