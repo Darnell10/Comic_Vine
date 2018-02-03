@@ -112,7 +112,7 @@ public class ComicDetail extends AppCompatActivity {
             String title = "";
             switch(position){
                 case 0:
-                    title =  "Screen";
+                    title = "Cover";
                     break;
                 case 1:
                     title = "Description";

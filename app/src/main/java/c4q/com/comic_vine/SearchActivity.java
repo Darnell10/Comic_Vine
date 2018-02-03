@@ -13,8 +13,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 
 import c4q.com.comic_vine.fragment.SearchResultFragment;
 
@@ -61,6 +63,10 @@ public class SearchActivity extends AppCompatActivity
         bundle.putString("query",searchInput.getText().toString());
         resultFragment.setArguments(bundle);
         getSupportFragmentManager().beginTransaction().replace(R.id.search_result_frag,resultFragment).commit();
+        FrameLayout resultFrag = findViewById(R.id.search_result_frag);
+        ViewGroup.LayoutParams params = resultFrag.getLayoutParams();
+        params.height = ViewGroup.LayoutParams.MATCH_PARENT;
+        resultFrag.setLayoutParams(params);
     }
 
 

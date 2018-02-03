@@ -11,25 +11,34 @@
     tools:showIn="@layout/app_bar_search"
     android:background="@color/black">
 
-    <EditText
-        android:textColor="@color/white"
-        android:id="@+id/search_input"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Batman, DC, Justice League..."/>
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/search_button"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="Search" />
+        <EditText
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:id="@+id/search_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Batman, DC, Justice League..."/>
+
+        <Button
+            android:id="@+id/search_button"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow"
+            android:text="Search" />
+
+    </LinearLayout>
+
 
     <FrameLayout
         android:id="@+id/search_result_frag"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp">
 
     </FrameLayout>
 
