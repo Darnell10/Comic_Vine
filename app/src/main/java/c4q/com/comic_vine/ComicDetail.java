@@ -54,8 +54,11 @@ public class ComicDetail extends AppCompatActivity {
         addToFave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ComicSQL db = new ComicSQL(getApplicationContext());
+                db.addComix(bundle);
                 Toast.makeText(getBaseContext(),"Added to My Comics!",Toast.LENGTH_SHORT)
                         .show();
+
             }
         });
 
