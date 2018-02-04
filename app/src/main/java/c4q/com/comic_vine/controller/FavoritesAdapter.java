@@ -55,7 +55,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
         private TextView fav_comic_name;
         private TextView fav_comic_res;
         private TextView fav_comic_pub;
-        private TextView fav_comic_dese;
+
 
 
         public FavoriteViewHolder(View itemView) {
@@ -65,7 +65,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
             fav_comic_name = itemView.findViewById(R.id.fav_name);
             fav_comic_res = itemView.findViewById(R.id.fav_res);
             fav_comic_pub = itemView.findViewById(R.id.fav_pub);
-            fav_comic_dese = itemView.findViewById(R.id.fav_dese);
+
         }
 
         public void onBind(Favorites favs) {
@@ -73,7 +73,6 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
             fav_comic_name.setText(favs.getName());
             fav_comic_res.setText(favs.getRes());
             fav_comic_pub.setText(favs.getPub());
-             fav_comic_dese.setText(favs.getDesc());
             Picasso.with(itemView.getContext()).load(favs.getImg());
 
 

@@ -10,15 +10,14 @@ public class Favorites {
     private String name;
     private String res;
     private String pub;
-    private String desc;
 
 
-    public Favorites(String img, String name, String res, String pub, String desc) {
+
+    public Favorites(String img, String name, String res, String pub) {
         this.img = img;
         this.name = name;
         this.res = res;
         this.pub = pub;
-        this.desc = desc;
     }
 
     public String getImg() {
@@ -53,11 +52,5 @@ public class Favorites {
         this.pub = pub;
     }
 
-    public String getDesc() {
-        return desc;
-    }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
 }
