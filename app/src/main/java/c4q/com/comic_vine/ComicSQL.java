@@ -40,7 +40,7 @@ public class ComicSQL extends SQLiteOpenHelper {
                 "CREATE TABLE " + TABLE_NAME +
                         "(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         //Add detail later
-                        "comic_image TEXT, comic_name TEXT,publisher_name TEXT,resource_type TEXT,detail TEXT);");
+                        "comic_image TEXT, comic_name TEXT,publisher_name TEXT,resource_type TEXT);");
     }
 
     @Override
@@ -69,7 +69,7 @@ public class ComicSQL extends SQLiteOpenHelper {
                 + "," +"'"+ bundle.getString("name")+"'"
                 + "," +"'"+ bundle.getString("res")+"'"
                 + "," +"'"+ bundle.getString("pub")+"'"
-                + "," +"'"+ bundle.getString("desc") + "');");
+                +  "');");
     }
 
 
@@ -85,8 +85,7 @@ public class ComicSQL extends SQLiteOpenHelper {
                             cursor.getString(cursor.getColumnIndex("comic_image")),
                             cursor.getString(cursor.getColumnIndex("comic_name")),
                             cursor.getString(cursor.getColumnIndex("publisher_name")),
-                            cursor.getString(cursor.getColumnIndex("resource_type")),
-                            cursor.getString(cursor.getColumnIndex("detail")));
+                            cursor.getString(cursor.getColumnIndex("resource_type")));
                     favorites.add(favorite);
                 } while (cursor.moveToNext());
             }
