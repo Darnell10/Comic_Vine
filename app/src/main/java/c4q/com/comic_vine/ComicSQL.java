@@ -15,12 +15,22 @@ import java.util.List;
 
 public class ComicSQL extends SQLiteOpenHelper {
 
+    private static ComicSQL myDatabase = null;
+
     private static final String DATABASE_NAME = "comix.db";
     private static final String TABLE_NAME = "comix";
     private static final int SCHEMA_VERSION = 1;
 
-    public ComicSQL(Context context) {
+    private ComicSQL(Context context) {
         super(context, DATABASE_NAME, null, SCHEMA_VERSION);
+    }
+
+    public static ComicSQL getInstance(Context ctx) {
+
+        if (myDatabase == null) {
+            myDatabase = new ComicSQL(ctx.getApplicationContext());
+        }
+        return myDatabase;
     }
 
 

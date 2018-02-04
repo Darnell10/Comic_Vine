@@ -13,7 +13,7 @@ public class FavoritesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
 
-        ComicSQL comicSQL = new ComicSQL(getApplicationContext());
+        ComicSQL comicSQL = ComicSQL.getInstance(getApplicationContext());
         List<Favorites> comicFaves = comicSQL.favorites();
 
     }
