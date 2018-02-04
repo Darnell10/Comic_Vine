@@ -26,7 +26,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
 
     List<Favorites> favList = new ArrayList<>();
 
-    public FavoritesAdapter(List<Favorites> list){
+    public FavoritesAdapter(List<Favorites> list) {
         favList = list;
     }
 
@@ -39,8 +39,8 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
 
     @Override
     public void onBindViewHolder(FavoriteViewHolder holder, int position) {
-     Favorites myfave = favList.get(position);
-     holder.onBind(myfave);
+        Favorites myfave = favList.get(position);
+        holder.onBind(myfave);
     }
 
 
@@ -49,14 +49,13 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
         return favList.size();
     }
 
-    public class FavoriteViewHolder extends RecyclerView.ViewHolder{
+    public class FavoriteViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView fav_comic_image;
         private TextView fav_comic_name;
         private TextView fav_comic_res;
         private TextView fav_comic_pub;
         private TextView fav_comic_dese;
-
 
 
         public FavoriteViewHolder(View itemView) {
@@ -69,19 +68,17 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
             fav_comic_dese = itemView.findViewById(R.id.fav_dese);
         }
 
-        public void onBind(Favorites favs){
+        public void onBind(Favorites favs) {
 
             fav_comic_name.setText(favs.getName());
             fav_comic_res.setText(favs.getRes());
             fav_comic_pub.setText(favs.getPub());
-            fav_comic_dese.setText(favs.getDesc());
+             fav_comic_dese.setText(favs.getDesc());
             Picasso.with(itemView.getContext()).load(favs.getImg());
-            final Favorites fav =favs;
-
-                }
-
 
 
         }
     }
+}
+
 

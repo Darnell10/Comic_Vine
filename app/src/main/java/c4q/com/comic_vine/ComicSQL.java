@@ -65,11 +65,11 @@ public class ComicSQL extends SQLiteOpenHelper {
 
         getWritableDatabase().execSQL("INSERT INTO " + TABLE_NAME +
                 "(comic_image,comic_name,publisher_name,resource_type,detail) VALUES ("
-                + bundle.getString("img")
-                + " ',' " + bundle.getString("name")
-                + " ',' " + bundle.getString("res")
-                + " ',' " + bundle.getString("pub")
-                + " ',' " + bundle.getString("desc") + "');");
+                + "'" + bundle.getString("img")+ "'"
+                + "," +"'"+ bundle.getString("name")+"'"
+                + "," +"'"+ bundle.getString("res")+"'"
+                + "," +"'"+ bundle.getString("pub")+"'"
+                + "," +"'"+ bundle.getString("desc") + "');");
     }
 
 
