@@ -63,7 +63,7 @@ public class ComicSQL extends SQLiteOpenHelper {
     public void addComix(Bundle bundle) {
         //Comic_Model.Results results = (Comic_Model.Results) Bundle.getResults();
 
-        getWritableDatabase().execSQL("INSERT INTO " + TABLE_NAME +
+        getWritableDatabase().execSQL(" INSERT INTO " + TABLE_NAME +
                 "(comic_image,comic_name,publisher_name,resource_type) VALUES ("
                 + "'" + bundle.getString("img")+ "'"
                 + "," +"'"+ bundle.getString("name")+"'"

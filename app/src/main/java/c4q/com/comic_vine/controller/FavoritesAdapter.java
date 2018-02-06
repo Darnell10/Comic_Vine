@@ -27,13 +27,14 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
     List<Favorites> favList = new ArrayList<>();
 
     public FavoritesAdapter(List<Favorites> list) {
-        favList = list;
+        this.favList = list;
     }
 
 
     @Override
     public FavoriteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.favorite_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.favorite_item, parent, false);
         return new FavoritesAdapter.FavoriteViewHolder(view);
     }
 
@@ -70,6 +71,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.Favo
 
         public void onBind(Favorites favs) {
 
+            fav_comic_image.setImageResource(Integer.parseInt(favs.getImg()));
             fav_comic_name.setText(favs.getName());
             fav_comic_res.setText(favs.getRes());
             fav_comic_pub.setText(favs.getPub());
