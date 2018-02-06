@@ -1,5 +1,6 @@
 package c4q.com.comic_vine;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -135,6 +136,8 @@ public class SearchActivity extends AppCompatActivity
         if (id == R.id.nav_search) {
             // Handle the camera action
         } else if (id == R.id.nav_my_comics) {
+            Intent intent = new Intent(this,FavoritesActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_share) {
 
